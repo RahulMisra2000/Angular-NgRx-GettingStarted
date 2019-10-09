@@ -118,6 +118,7 @@ export class DeleteProductFail implements Action {
 }
 
 // Union the valid types
+// ************************ remember a class is a TYPE 
 export type ProductActions = ToggleProductCode
   | SetCurrentProduct
   | ClearCurrentProduct
