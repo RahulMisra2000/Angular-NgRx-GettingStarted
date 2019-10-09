@@ -9,7 +9,9 @@ export interface State extends fromRoot.State {
     products: fromProducts.ProductState;
 }
 
-// Selector functions
+// Selector functions ********************************************************************
+// They are great convenience for the components and services that need to subscribe to a particular part of the slice of the state data
+// ************************************************************************************************************************************
 const getProductFeatureState = createFeatureSelector<fromProducts.ProductState>('products');
 
 export const getShowProductCode = createSelector(
