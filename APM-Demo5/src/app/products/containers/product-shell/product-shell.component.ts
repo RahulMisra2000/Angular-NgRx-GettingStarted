@@ -16,10 +16,16 @@ export class ProductShellComponent implements OnInit {
   products$: Observable<Product[]>;
   errorMessage$: Observable<string>;
 
+  
+  //****************** The slice of the store we are interested in *******************************************
   constructor(private store: Store<fromProduct.State>) {}
 
   ngOnInit(): void {
     this.store.dispatch(new productActions.Load());
+    
+    //*********** Here we are calling the selector functions that we coded **********************************
+    //*********** select is an Rxjs operator that is provided by ngrx. We give it a selector method that we write
+    //*********** It returns an observable whose value is what the selector method returns
     this.products$ = this.store.pipe(select(fromProduct.getProducts));
     this.errorMessage$ = this.store.pipe(select(fromProduct.getError));
     this.selectedProduct$ = this.store.pipe(select(fromProduct.getCurrentProduct));
