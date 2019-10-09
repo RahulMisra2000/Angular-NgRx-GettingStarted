@@ -3,6 +3,8 @@ import { Product } from '../product';
 /* NgRx */
 import { Action } from '@ngrx/store';
 
+
+// *************************** TO AVOID MAGIC STRINGS ******************************************************************
 export enum ProductActionTypes {
   ToggleProductCode = '[Product] Toggle Product Code',
   SetCurrentProduct = '[Product] Set Current Product',
@@ -21,6 +23,8 @@ export enum ProductActionTypes {
   DeleteProductSuccess = '[Product] Delete Product Success',
   DeleteProductFail = '[Product] Delete Product Fail'
 }
+// *************************** TO AVOID MAGIC STRINGS ******************************************************************
+
 
 // Action Creators
 export class ToggleProductCode implements Action {
